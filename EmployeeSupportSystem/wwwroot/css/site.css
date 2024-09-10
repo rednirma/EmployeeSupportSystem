@@ -26,20 +26,27 @@ body {
     border-radius:5px;
 }
 #signinform {
-background-color:lightgray;
+background-color:lightcoral;
 border-radius:5px;
 }
 
-#signinform:hover {
-    border-radius: 5px;
-    box-shadow:15px,15px,black;
-}
+    #signinform:hover {
+        border-radius: 5px;
+        box-shadow: 5px 5px 2px 2px lightblue;
+    }
 #signupform {
-    background-color: lightgray;
+    background-color: lightcoral;
     border-radius: 5px;
 }
 
     #signupform:hover {
         border-radius: 5px;
-        box-shadow: 15px,15px,black;
+        box-shadow: 5px 5px 2px 2px lightblue;
     }
+
+.navbar {
+border-radius:5px;
+}
+.footer {
+border-radius:5px;
+}
