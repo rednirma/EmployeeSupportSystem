@@ -21,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="colnavbar">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-column text-dark">
                         @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li> *@
@@ -66,7 +66,7 @@
                             }
                             <li class="nav-item ms-auto mt-2">
                                 <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="form-inline">
-                                    <button type="submit" class="btn btn-link nav-link" style="padding: 0; border: none; cursor: pointer;">Logout</button>
+                                    <button id="logoutbtn" type="submit" class="btn btn-link nav-link" style="padding: 0; border: none; cursor: pointer;">Logout</button>
                                 </form>
                             </li>
                         }
