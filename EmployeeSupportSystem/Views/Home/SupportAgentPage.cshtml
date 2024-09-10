@@ -1,0 +1,73 @@
+﻿@model SupportAgentViewModel
+
+@{
+    ViewData["Title"] = "Support Agent";
+}
+
+<h2>Support Agent Dashboard</h2>
+
+<h3>Pending Tickets</h3>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Ticket ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model.PendingTickets)
+        {
+            <tr>
+                <td>@ticket.TicketID</td>
+                <td>@ticket.Subject</td>
+                <td>@ticket.Description</td>
+                <td>@ticket.Status</td>
+                <td>
+                    <form asp-action="UpdateTicketStatus" method="post">
+                        <input type="hidden" name="ticketId" value="@ticket.TicketID" />
+                        <select name="status" class="form-control">
+                            @if (ticket.Status == TicketStatus.Assigned)
+                            {
+                                <option value="InProgress">
+                                    In Progress
+                                </option>
+                            }
+                            else if (ticket.Status == TicketStatus.InProgress)
+                            {
+                                <option value="Resolved">
+                                    Resolved
+                                </option>
+                            }
+                        </select>
+                        <button type="submit" class="btn btn-primary m-lg-2">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h3>Resolved Tickets</h3>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Ticket ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model.ResolvedTickets)
+        {
+            <tr>
+                <td>@ticket.TicketID</td>
+                <td>@ticket.Subject</td>
+                <td>@ticket.Description</td>
+                <td>@ticket.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
