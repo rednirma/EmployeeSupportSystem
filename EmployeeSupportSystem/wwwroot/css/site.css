@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.nav-item :hover{
+    background-color :lightcoral;
+    border-radius:5px;
+}
